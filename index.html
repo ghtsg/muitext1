@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html>
 
 	<head>
 		<meta charset="utf-8">
-		<title>易数通4</title>
+		<title>易数通v0.1</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -12,32 +12,51 @@
 	</head>
 
 	<body>
-		<header class="mui-bar mui-bar-nav"><!--界面中的第一行-->
+		<header class="mui-bar mui-bar-nav">
+			<h1 class="mui-title">易数通v0.1</h1>
 			<a class="mui-icon mui-icon-bars mui-pull-left"></a>
-			<a id="info" class="mui-icon mui-icon-info-filled mui-pull-right" style="color: #999;"></a>
-			<h1 class="mui-title">易数通4</h1>
-		</header>
+			<a id="info" class="mui-icon mui-icon-help-filled mui-pull-right" style="color: #999;"></a>
+        </header>   
+
+		
 		<script src="js/mui.min.js"></script>
 		<script src="js/update.js" type="text/javascript" charset="utf-8"></script>
 		<script>
 			var menu = null,
 				main = null;
 			var showMenu = false;
+			//初始化配置功能参数：创建子页面、关闭页面、手势事件配置、预加载、下拉刷新、上拉加载。
+			/*mui框架将很多功能配置都集中在mui.init方法中，要使用某项功能，只需要在mui.init方法中完成对应参数配置即可，目前支持在mui.init方法中配置的功能包括：创建子页面、关闭页面、手势事件配置、预加载、下拉刷新、上拉加载。
+                         但是官方有又说法：
+                         页面初始化：必须执行mui.init方法
+            mui在页面初始化时，初始化了很多参数配置，比如：按键监听、手势监听等，因此mui页面都必须调用一次mui.init()方法；
+                        在app开发中，若要使用HTML5+扩展api，必须等plusready事件发生后才能正常使用，mui将该事件封装成了mui.plusReady()方法，涉及到HTML5+的api，建议都写在mui.plusReady方法中。
+                        个人认为：
+            1.每个用到mui的页面都调用下mui.init。
+            2.如果需要使用大H5+对象，就写到plusReady中，如plus对象
+			 * */
 			mui.init({
+				//右滑动退出
 				swipeBack: false,
+				//系统状态栏（通知栏、顶部状态栏）样式背景颜色或透明 
 				statusBarBackground: '#f7f7f7',
+	            
+				//手势事件
 				gestureConfig: {
+					//247896
 					doubletap: true
 				},
+				
 				subpages: [{
-//					id: 'grid',
-//					url: 'grid-1.html',
-          id: 'list',
-          url: 'list.html',
+					id: 'list',
+					//直接启动就是九宫格界面
+					//url: 'examples/grid-pagination.html',
+					url:'list.html',
 					styles: {
 						top: '45px',
 						bottom: 0,
-						bounce: 'vertical'
+						bounce: 'vertical',
+						scrollIndicator:'vertical'
 					}
 				}]
 			});
@@ -131,7 +150,7 @@
 			});
 			 //敲击顶部导航，内容区回到顶部
 			document.querySelector('header').addEventListener('doubletap', function() {
-				main.children()[0].evalJS('mui.scrollTo(0, 100)');
+				main.children()[0].evalJS('mui.scrollTo(0, 100)');  
 			});
 			 //主界面向右滑动，若菜单未显示，则显示菜单；否则不做任何操作
 			window.addEventListener("swiperight", openMenu);
@@ -161,7 +180,7 @@
 					subWebview.loadURL('examples/info.html');
 					//修改共用父模板的标题
 					mui.fire(template, 'updateHeader', {
-						title: '关于',
+						title: '关于易数通',
 						showMenu: false
 					});
 					template.show('slide-in-right', 150);
@@ -189,6 +208,10 @@
 				}
 			};
 		</script>
+		
+		
+		
+		
 	</body>
 
 </html>

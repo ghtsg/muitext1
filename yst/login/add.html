@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+
+		<style>
+			ul {
+				font-size: 14px;
+				color: #8f8f94;
+			}
+			.mui-btn {
+				padding: 10px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav" style="padding-right: 15px;">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+	
+		
+			<h1 class="mui-title">易数通v0.1</h1>
+			
+		</header>
+		<div class="mui-content">
+			<div class="mui-card">
+				<p>
+					<!--您好 <span id='account'></span>，您已成功登录。-->
+					<span id='account'></span>，请选择以下模板创建
+					<form class="mui-input-group">				
+						<div  class="mui-input-row mui-radio mui-left "> 									
+								<input name="radio1" type="radio"><label>数据汇总模板</label>
+						</div>
+						<div class="mui-input-row mui-radio mui-left ">
+							<input name="radio1" type="radio" ><label>问卷调查模板</label>
+						</div>
+						<div class="mui-input-row mui-radio mui-left ">						
+							<input name="radio1" type="radio" ><label>话题投票模板</label>
+						</div>
+					</form>
+				</p>
+			</div>
+			<div class="mui-card">
+				<p>
+					<!--您好 <span id='account'></span>，您已成功登录。-->
+					请选择以下用户参与： 
+					<form class="mui-input-group">
+						<div  class="mui-input-row mui-checkbox mui-left "> 									
+								<input name="checkbox" value="Item 1" type="checkbox" ><label>宋跃雳</label>
+						</div>
+						<div class="mui-input-row mui-checkbox mui-left ">
+							<input name="checkbox" value="Item 1" type="checkbox" ><label>钱  浩</label>
+						</div>
+						<div class="mui-input-row mui-checkbox mui-left ">						
+							<input name="checkbox" value="Item 1" type="checkbox" ><label>李  辉</label>
+						</div>
+						<div class="mui-input-row mui-checkbox mui-left ">						
+							<input name="checkbox" value="Item 1" type="checkbox" ><label>许  浩</label>
+						</div>
+					</form>
+				</p>
+			</div>
+
+				<!--<button  class="mui-btn mui-btn-block mui-btn-primary">设置</button>-->
+				<!--
+				<button id='exit' class="mui-btn mui-btn-block mui-btn-green">关闭</button>
+                <button id='logout' class="mui-btn mui-btn-red mui-btn-block">注销登录</button>
+                -->
+			<div class="mui-content-padded">
+				<button id='ok' class="mui-btn mui-btn-block mui-btn-primary">确认</button>
+			</div>
+		</div>
+		<script src="../../js/mui.min.js"></script>
+		<script src="../../js/app.js"></script>
+		<script>
+			(function($, doc) {
+				$.init();
+				var settings = app.getSettings();
+				var account = doc.getElementById('account');
+ 			
+				window.addEventListener('show', function() {
+					var state = app.getState();
+					//alert('main.html '+state.account);
+					account.innerText = state.account;
+				}, false);
+				$.plusReady(function() {
+					var settingPage = $.preload({
+						"id": 'setting',
+						"url": 'setting.html'
+					});
+					//设置
+//					var settingButton = doc.getElementById('setting');
+//					//settingButton.style.display = settings.autoLogin ? 'block' : 'none';
+//					settingButton.addEventListener('tap', function(event) {
+//						$.openWindow({
+//							id: 'setting',
+//							show: {
+//								aniShow: 'pop-in'
+//							},
+//							styles: {
+//								popGesture: 'hide'
+//							},
+//							waiting: {
+//								autoShow: false
+//							}
+//						});
+//					});
+					//--
+					$.oldBack = mui.back;
+					var backButtonPress = 0;
+					//设置左上角返回按键直接退出
+//					$.back = function(event) {
+//						backButtonPress++;
+//						if (backButtonPress > 1) {
+//							plus.runtime.quit();
+//						} else {
+//							plus.nativeUI.toast('再按一次退出应用');
+//						}
+//						setTimeout(function() {
+//							backButtonPress = 0;
+//						}, 1000);
+//						return false;
+//					};
+				});
+			}(mui, document));
+
+		</script>
+	</body>
+
+</html>
