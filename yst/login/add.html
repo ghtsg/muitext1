@@ -88,27 +88,27 @@
 					account.innerText = state.account;
 				}, false);
 				$.plusReady(function() {
-					var settingPage = $.preload({
-						"id": 'setting',
-						"url": 'setting.html'
+					var okPage = $.preload({
+						"id": 'ok',
+						"url": '../echart/rich-echarts.html'
 					});
-					//设置
-//					var settingButton = doc.getElementById('setting');
+					//查看图表页面
+					var okButton = doc.getElementById('ok');
 //					//settingButton.style.display = settings.autoLogin ? 'block' : 'none';
-//					settingButton.addEventListener('tap', function(event) {
-//						$.openWindow({
-//							id: 'setting',
-//							show: {
-//								aniShow: 'pop-in'
-//							},
-//							styles: {
-//								popGesture: 'hide'
-//							},
-//							waiting: {
-//								autoShow: false
-//							}
-//						});
-//					});
+					okButton.addEventListener('tap', function(event) {
+						$.openWindow({
+							id: 'ok',
+							show: {
+								aniShow: 'pop-in'
+							},
+							styles: {
+								popGesture: 'hide'
+							},
+							waiting: {
+								autoShow: false
+							}
+						});
+					});
 					//--
 					$.oldBack = mui.back;
 					var backButtonPress = 0;
