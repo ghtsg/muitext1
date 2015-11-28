@@ -27,23 +27,28 @@
 			
 		</header>
 		
-		<footer class="mui-bar mui-bar-footer "> 
-		
-			<div id="sliderSegmentedControl3" class="mui-fullscreen mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
-			    <div class="mui-scroll" style=" font:'arial black' color:#778899; background:#FFFF99;">
-
-						<a id='item1' class="mui-control-item" href="#item3mobile">优秀作品</a>
-						<a id='item2' class="mui-control-item" href="#item3mobile">本地模板</a> 
-						<a id='item3' class="mui-control-item  " href="#item3mobile">模板下载</a>
-						<a id='item4' class="mui-control-item mui-active" href="yst/login.html">我的</a>
-	
-				</div>
-			</div>
-		</footer>
+		<nav class="mui-bar mui-bar-tab">
+			<a class="mui-tab-item" href="#tabbar">
+				<span class="mui-icon mui-icon-home"></span>
+				<span class="mui-tab-label">优秀作品</span>
+			</a>
+			<a id='localModel' class="mui-tab-item" href="#tabbar-with-chat">
+				<span class="mui-icon mui-icon-email"></span>
+				<span class="mui-tab-label">本地模板</span>
+			</a>
+			<a class="mui-tab-item" href="#tabbar-with-contact">
+				<span class="mui-icon mui-icon-contact"></span>
+				<span class="mui-tab-label">模板下载</span>
+			</a>
+			<a id='my' class="mui-tab-item  mui-active" href="#tabbar-with-map">
+				<span class="mui-icon mui-icon-gear"><span class="mui-badge">9</span></span>
+				<span class="mui-tab-label">我的</span>
+			</a>
+		</nav>
 		<div class="mui-content">
 			<div class="mui-content-padded">
 				<p>
-					您好 <span id='account'></span>，您已成功登录。
+					您参与的数图：
 					<ul id="list" class="mui-table-view mui-table-view-chevron">
 						<li class="mui-table-view-cell mui-collapse">
 							<a class="mui-navigate-right" href="#">
@@ -200,7 +205,7 @@
 			//点击右上角添加图标，打开添加页面；
 			document.getElementById('iconAdd').addEventListener('tap', function(e) {
 					mui.openWindow({
-							url: 'add.html',
+							url: '../fillData/add.html',
 							id: 'add',
 							show: {
 								aniShow: 'pop-in'
