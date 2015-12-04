@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>plus使用经验</title>
+  </head>
+
+  <body>
+    <h1><span>plus使用经验</span></h1>
+    <h2>
+      <ol>
+      <li>plus对象是对window对象的扩展。</li>
+      <li>使用plus对象最需要注意的是不要在页面初始化期间使用。就算mui.plusReady方法执行完成之后也不行。</li>
+      <li>因为mui.plusReady是异步方法，在其之后的代码有可能在其之前执行。</li> 
+      <li>每个页面附加的js代码应该遵循一个基本的结构。
+        <ol type="i">
+          <li>调用<code>mui.init(...)</code>，初始化mui对象，配置本页面的一些特殊之处，例如是否响应一些消息,调整mui的默认值，预加载子页面等等。</li>
+          <li>调用<code>mui.plusReady(...)</code>，初始化plus对象，修改window对象，例如注册window对象专有的消息响应函数等等。</li>
+          <li>window对象专有的<a href="http://www.html5plus.org/doc/zh_cn/webview.html#plus.webview.WebviewEvent" target="_blank">消息的列表</a>。</li>
+          <li>定义信号变量。</li>
+          <li>定义各页面元素的消息响应函数。各个函数可以通过信号变量协同工作。</li>
+          <li>绑定各页面元素的消息响应函数。</li>
+        </ol>
+      </li>
+      <li>在各页面元素的消息响应函数的定义中，可以使用plus对象，因为他们并不是在页面初始化或加载期间执行。</li>
+      <li>当用户操作界面，触发消息，调用响应函数的时候，plus对象应该已经准备完毕，可以使用了。</li>
+      </ol>
+    </h2>
+  </body>
+
+</html>

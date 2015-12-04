@@ -3,7 +3,7 @@
   "id": "H56C6CF89",/*必选，应用的标识*/
   "name": "muitext1",/*必选，应用名称*/
   "version": {
-    "name": "1.0",/*必选，版本名称*/
+    "name": "0.1.5",/*必选，版本名称*/
     "code": ""
   },
   "description": "",/*可选，应用描述信息*/
@@ -64,8 +64,8 @@
   "plus": {
     "popGesture": "close",/*设置应用默认侧滑返回关闭Webview窗口，none为无侧滑返回功能，hide为侧滑隐藏Webview窗口。参考ask.dcloud.net.cn/article/102*/
     "splashscreen": {
-      "autoclose": false,/*如果为true，程序启动的图片可以自动关闭，如果为false，开发者需要手动关闭*/
-      "waiting": true
+      "autoclose": true,/*如果为true，程序启动的图片可以自动关闭，如果为false，开发者需要手动关闭*/
+      "waiting": false,"delay":"0"
     },
     "runmode": "normal",/*两个值，liberate或normal，前者在应用安装时释放资源，后者不需要释放资源*/
     "signature": "Sk9JTiBVUyBtYWlsdG86aHIyMDEzQGRjbG91ZC5pbw==",/*可选，保留给应用签名，暂不使用*/
@@ -151,5 +151,149 @@
         }
       }
     }
-  }
+  },
+	"dependencies": {
+		"pages": {
+			"index.html": {
+				"resources": [
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css",
+					"js/update.js",
+					"comps/defaultTab.html",
+					"comps/myTab.html",
+					"comps/communityTab.html",
+					"comps/collectTab.html"
+				],
+				"refer": [
+					"comps/index-menu.html"
+				],
+				"priority": 0
+			},
+			"comps/index-menu.html": {
+				"resources": [
+					"fonts/mui.ttf"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"comps/defaultTab.html": {
+				"resources": [
+					"js/mui.min.js",
+					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"comps/myTab.html": {
+				"resources": [
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"comps/communityTab.html": {
+				"resources": [
+					"js/mui.min.js",
+					"images/60x60.gif",
+					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"comps/collectTab.html": {
+				"resources": [
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"css/mui.min.css"
+				],
+				"refer": [],
+				"priority": 0
+			}
+		},
+		"idle": {
+			"resources": [
+				"images/cbd.jpg",
+				"yst/html4.01.html",
+				"yst/echart/rich-echarts.html",
+				"js/mui.picker.min.js",
+				"docs/plus-about.html",
+				"images/shuijiao.jpg",
+				"js/mui.dtpicker.js",
+				"images/pull_arrow.png",
+				"yst/localModel/localModelList.html",
+				"js/mui.zoom.js",
+				"js/mui.poppicker.js",
+				"js/mui.previewimage.js",
+				"yst/login/setting.html",
+				"js/city.data.js",
+				"js/mui.js",
+				"list-0.html",
+				"css/mui.picker.min.css",
+				"css/mui.imageviewer.css",
+				"js/mui.view.js",
+				"js/mui.picker.js",
+				"yst/login/unlock.html",
+				"js/app.js",
+				"js/service.js",
+				"libs/easymob-webim-sdk/easemob.im-1.0.5.js",
+				"yst/fillData/add.html",
+				"js/mui.pullToRefresh.material.js",
+				"docs/readme.txt",
+				"css/mui.listpicker.css",
+				"images/pull_fresh.png",
+				"yst/login/forget_password.html",
+				"js/mui.lazyload.js",
+				"css/mui.css",
+				"js/mui.enterfocus.js",
+				"js/city.data-3.js",
+				"comps/readme.txt",
+				"css/mui.dtpicker.css",
+				"css/mui.picker.all.css",
+				"css/feedback-page.css",
+				"yst/echart/rich-echarts-lines-sdr.html",
+				"js/feedback.js",
+				"images/user-photo.png",
+				"js/arttmpl.js",
+				"js/mui.imageViewer.js",
+				"yst/login/login.html",
+				"images/muwu.jpg",
+				"comps/info.html",
+				"images/weixin.png",
+				"images/42x42.gif",
+				"libs/echarts-all.js",
+				"images/qq.png",
+				"js/ad.js",
+				"js/mui.lazyload.img.js",
+				"images/iconfont-tianjia.png",
+				"docs/mui-about.html",
+				"yst/my/main.html",
+				"yst/login/reg.html",
+				"images/logo.png",
+				"js/mui.listpicker.js",
+				"images/sinaweibo.png",
+				"libs/easymob-webim-sdk/json2.js",
+				"libs/easymob-webim-sdk/jquery-1.11.1.js",
+				"css/mui.poppicker.css",
+				"js/feedback-page.js",
+				"images/login-1.png",
+				"js/mui.indexedlist.js",
+				"js/mui.pullToRefresh.js",
+				"libs/easymob-webim-sdk/quickstart.md",
+				"css/style.css",
+				"css/mui.picker.css",
+				"css/mui.indexedlist.css",
+				"js/mui.picker.all.js",
+				"images/yuantiao.jpg",
+				"css/app.css",
+				"index-0.html",
+				"yst/login/add--.html",
+				"yst/new_file.html",
+				"js/mui.locker.js",
+				"libs/easymob-webim-sdk/strophe-custom-2.0.0.js"
+			]
+		}
+	}
 }

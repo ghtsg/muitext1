@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>mui使用经验</title>
+  </head>
+
+  <body>
+    <h1><span>mui使用经验</span></h1>
+    <h2>
+      <ol>
+      <li>mui是在客户端动态建立的，靠的是每个页面引入mui.js文件</li>
+      <li>网站上提供的<a href="http://dev.dcloud.net.cn/mui/ui/" target="_blank">文档</a>不是很全，只能起到入门的作用。</li>
+      <li>mui.js文件定义了mui对象主要的方法和属性。通过阅读该文件可以从根本上了解mui对象的用法。</li>
+      <li>各种组件在js目录下的以mui开头的js文件中。</li>
+      <li>mui.*的代码风格是多个"(function(参数表){代码})(参数表);"段落。与主流的js写法有所区别，没有使用require风格，不考虑包管理。</li>
+      <li>可能是为了提高性能。毕竟，连jquery都不建议使用。</li>
+      <li>这样做也带来了麻烦，就是代码块的次序要注意，要避免出现引用在定义之前的情况。</li>
+      <li>mui引用了很多特殊的对象，如webview等对象，在正常的js中都是找不到的。</li>
+      <li>这些对象都来自于plus对象，plus对象是实现html5+扩展协议的。</li>
+      <li>plus对象及其派生的对象参见<a href="http://www.html5plus.org/doc/h5p.html" target="_blank">html5+规范文档</a>。</li>
+      </ol>
+    </h2>
+  </body>
+
+</html>
